@@ -1,0 +1,103 @@
+
+nav {
+  background-color: #131921;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 65px;
+}
+
+/* Amazon Logo */
+.nav-logo {
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border: 1px solid transparent;
+}
+
+.nav-logo h2 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+/* Search Input */
+nav input {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px 15px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background-color: #ffffff;
+  color: #111111;
+  box-sizing: border-box;
+}
+
+nav input:focus {
+  box-shadow: 0 0 0 3px #febd69;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-links a {
+  padding: 10px 9px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-weight: 600;
+  transition: border-color 0.2s ease;
+}
+
+/* Hover Effect */
+.nav-logo:hover,
+.nav-links a:hover {
+  border-color: #ffffff;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 650px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav-logo h2 {
+    font-size: 24px;
+  }
+
+  nav input {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .nav-links {
+    margin-left: auto;
+    gap: 2px;
+  }
+
+  .nav-links a {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+}
