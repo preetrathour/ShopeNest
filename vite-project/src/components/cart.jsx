@@ -1,31 +1,62 @@
-// src/components/cart.jsx
-function Cart({ title, items = [] }) {
+import React from "react";
+import { Link } from "react-router-dom";
+
+const FALLBACK_IMAGE = "/banners/placeholder.svg";
+function Cart({ id, title, items = [] }) {
   return (
-    <section className="cart-section">
-      {title && <h2 className="section-title">{title}</h2>}
-       
-      <div className="cart">
-        {items.map((item, index) => (
-          item.type === "video" ? (
-            <video 
-              key={index} 
-              src={item.url} 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-            />
+    <section id={id} className="banner-section">
+      {title && <h2 className="banner-section__title">{title}</h2>}
+
+      <div className="banner-row">
+        {items.map((item, index) => {
+          const media =
+            item.type === "video" ? (
+              <video
+                src={item.url}
+                poster={item.poster}
+                autoPlay
+                loop
+                muted
+                playsInline
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+            ) : (
+              <img
+                src={item.url}
+                alt={item.alt || `Banner ${index + 1}`}
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = FALLBACK_IMAGE;
+                }}
+              />
+            );
+
+          const caption = item.alt ? (
+            <span className="banner-item__label">{item.alt}</span>
+          ) : null;
+
+          return item.to ? (
+            <Link
+              key={item.url || index}
+              to={item.to}
+              className="banner-item"
+              aria-label={item.alt}
+            >
+              {media}
+              {caption}
+            </Link>
           ) : (
-            <img 
-              key={index} 
-              src={item.url} 
-              alt={item.alt || `Product ${index + 1}`} 
-            />
-          )
-        ))}
+            <div key={item.url || index} className="banner-item">
+              {media}
+              {caption}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 }
-
 export default Cart;

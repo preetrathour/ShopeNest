@@ -1,5 +1,5 @@
-// src/pages/CartPage.jsx
 import React from 'react';
+import "./cart.css";
 
 import { useCart } from "../context/CartContext";
 
@@ -39,7 +39,6 @@ function CartPage() {
       <h1 className="cart-title">Shopping Cart ({cartItems.length} {cartItems.length === 1 ? 'item' : 'items'})</h1>
       
       <div className="cart-content-layout">
-        {/* Cart Item List */}
         <div className="cart-items-list">
           {cartItems.map((item) => (
             <div key={item.id} className="cart-item-card">

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import "./Electronics.css";
 
-const electronicsProducts = [
+export const electronicsProducts = [
   {
     id: 301,
     title: "MacBook Air M2 (13.6-inch, 8GB RAM, 256GB SSD)",

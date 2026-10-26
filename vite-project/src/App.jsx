@@ -1,3 +1,4 @@
+import SearchResults from './pages/SearchResults';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Home from './pages/Home';
@@ -12,7 +13,6 @@ import Flights from './pages/flights';
 import Electronics from "./pages/Electronics";
 import Footer from "./components/Footer";
 import { CartProvider } from './context/CartContext';
-
 import './App.css';
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
         <Route path="/Flights" element={<Flights />} />
         <Route path="/Electronics" element={<Electronics />} />
         <Route path="/Cartcontext" element={<Electronics />} />
+        <Route path="/search" element={<SearchResults/>} />
       </Routes>
 
       <Footer />

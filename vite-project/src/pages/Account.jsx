@@ -24,82 +24,104 @@ function AccountSetup() {
     alert("Account settings saved!");
   };
 
+  const initials = formData.name
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0].toUpperCase())
+    .join("");
+
   return (
-    <div>
-      <header>
-        <h1>Account Setup</h1>
-        <p>Update your personal details below.</p>
-      </header>
+    <main className="account-page">
+      <section className="account-card">
+        <header className="account-header">
+          <div className="account-avatar" aria-hidden="true">
+            {initials || "?"}
+          </div>
+          <div>
+            <h1 className="account-title">Account Setup</h1>
+            <p className="account-subtitle">Update your personal details below.</p>
+          </div>
+        </header>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Full Name</label>
-          <br />
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter your Name"
-            required
-          />
-        </div>
+        <form className="account-form" onSubmit={handleSubmit}>
+          <div className="form-field form-field--full">
+            <label className="form-label" htmlFor="name">
+              Full name
+            </label>
+            <input
+              className="form-input"
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              autoComplete="name"
+              required
+            />
+          </div>
 
-        <br />
+          <div className="form-field form-field--full">
+            <label className="form-label" htmlFor="email">
+              Email address
+            </label>
+            <input
+              className="form-input"
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="you@example.com"
+              autoComplete="email"
+              required
+            />
+          </div>
 
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder=""
-            required
-          />
-        </div>
+          <div className="form-field">
+            <label className="form-label" htmlFor="phone">
+              Phone number <span className="form-optional">(optional)</span>
+            </label>
+            <input
+              className="form-input"
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+1 123 456 7890"
+              autoComplete="tel"
+            />
+          </div>
 
-        <br />
+          <div className="form-field">
+            <label className="form-label" htmlFor="gender">
+              Gender
+            </label>
+            <select
+              className="form-input form-select"
+              id="gender"
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+            </select>
+          </div>
 
-        <div>
-          <label htmlFor="phone">Phone Number</label>
-          <br />
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="+1 123 456 7890"
-          />
-        </div>
-
-        <br />
-
-        <div>
-          <label htmlFor="gender">Gender</label>
-          <br />
-          <select
-            id="gender"
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-            <option value="prefer-not-to-say">Prefer not to say</option>
-          </select>
-        </div>
-
-        <br />
-
-        <button type="submit">Save Changes</button>
-      </form>
-    </div>
+          <div className="form-actions">
+            <button className="btn btn-primary" type="submit">
+              Save changes
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
   );
 }
 
