@@ -1,0 +1,235 @@
+
+/* src/pages/Flights.css */
+
+.flights-container {
+  padding: 30px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background: #f7f8fa;
+  min-height: 100vh;
+}
+
+/* Header */
+.flights-header {
+  background: linear-gradient(135deg, #131921, #232f3e);
+  color: white;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.flights-header h1 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.flights-header p {
+  color: #d5d9d9;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Booking Card */
+.booking-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 35px;
+}
+
+/* Trip Type */
+.trip-type {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 22px;
+}
+
+.trip-type label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.trip-type input {
+  accent-color: #ff9900;
+  cursor: pointer;
+}
+
+/* Search Form */
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  align-items: flex-end;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #565959;
+}
+
+.input-group input,
+.input-group select {
+  padding: 12px;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.12);
+}
+
+/* Search Button */
+.search-flights-btn {
+  padding: 12px;
+  background: linear-gradient(135deg, #ffd814, #ffca28);
+  border: 1px solid #fcd200;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-flights-btn:hover {
+  background: linear-gradient(135deg, #ffca28, #ffb300);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(255, 193, 7, 0.3);
+}
+
+/* Flights Grid */
+.flights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Flight Card */
+.flight-deal-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.flight-deal-card:hover {
+  transform: translateY(-6px);
+  border-color: #ff9900;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+/* Route */
+.flight-route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: #0f1111;
+  margin-bottom: 10px;
+}
+
+/* Airline */
+.airline-name {
+  font-size: 0.88rem;
+  color: #565959;
+  margin-bottom: 14px;
+}
+
+/* Bottom Section */
+.flight-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  border-top: 1px dashed #d5d9d9;
+  padding-top: 14px;
+}
+
+/* Price */
+.flight-price {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #b12704;
+}
+
+/* Book Button */
+.book-btn {
+  padding: 9px 18px;
+  background: linear-gradient(135deg, #febd69, #ff9900);
+  color: #111111;
+  border: 1px solid #e88b00;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: linear-gradient(135deg, #ff9900, #e68a00);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 153, 0, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .flights-container {
+    padding: 20px 12px;
+  }
+
+  .flights-header {
+    padding: 20px;
+  }
+
+  .flights-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .booking-card {
+    padding: 18px;
+  }
+
+  .trip-type {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .flights-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

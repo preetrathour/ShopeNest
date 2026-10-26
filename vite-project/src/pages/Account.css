@@ -1,0 +1,232 @@
+
+
+:root {
+  --ink: #17212b;
+  --ink-soft: #5b6775;
+  --line: #d9dfe6;
+  --canvas: #eef1f5;
+  --surface: #ffffff;
+  --accent: #1f5fbf;
+  --accent-dark: #174b98;
+  --accent-tint: #e6eefb;
+  --focus-ring: rgba(31, 95, 191, 0.28);
+  --radius-card: 16px;
+  --radius-control: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Page layout ---------- */
+.account-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 20px;
+}
+
+.account-card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 32px rgba(23, 33, 43, 0.08);
+  overflow: hidden;
+}
+
+/* ---------- Header ---------- */
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 36px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #f9fbfd 0%, var(--surface) 100%);
+}
+
+.account-avatar {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-dark);
+  background: var(--accent-tint);
+  border: 2px solid #c7d8f4;
+}
+
+.account-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.account-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ---------- Form ---------- */
+.account-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 20px;
+  padding: 32px 36px 36px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.form-field--full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.form-optional {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.form-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 0.97rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input::placeholder {
+  color: #93a0ae;
+}
+
+.form-input:hover {
+  border-color: #b7c1cd;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+/* Show error styling only after the user has typed something invalid */
+.form-input:not(:placeholder-shown):invalid {
+  border-color: #c0392b;
+}
+
+.form-input:not(:placeholder-shown):invalid:focus {
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.2);
+}
+
+/* Custom select arrow */
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235b6775' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+/* ---------- Actions ---------- */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.btn {
+  height: 46px;
+  padding: 0 28px;
+  font: inherit;
+  font-size: 0.97rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .account-page {
+    padding: 24px 14px;
+  }
+
+  .account-header {
+    padding: 22px 20px;
+  }
+
+  .account-form {
+    grid-template-columns: 1fr;
+    padding: 24px 20px 28px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-input,
+  .btn {
+    transition: none;
+  }
+}
