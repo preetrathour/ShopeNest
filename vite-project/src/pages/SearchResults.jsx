@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { mobileProducts } from "./Mobile";
 import { electronicsProducts } from "./Electronics";
-import products from "../data/Products";
+// import products from "../data/Products";
 import "./SearchResult.css";
 
 function SearchResults() {
