@@ -1,0 +1,115 @@
+
+.shopping {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 24px;
+  background-color: var(--secondary-bg);
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.shopping::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.shopping span,
+.shopping a {
+  color: var(--text-light);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.shopping span:hover,
+.shopping a:hover {
+  opacity: 1;
+  color: var(--accent-color);
+}
+/* Category strip (.shopping) – sits under the Navbar */
+
+.shopping {
+  --strip-bg: #221f3d;
+  --strip-text: #b3afcf;
+  --strip-text-hover: #f2f0fa;
+  --strip-pill: rgba(255, 255, 255, 0.08);
+  --strip-amber: #ffb547;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 24px;
+  background-color: var(--strip-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: "DM Sans", Arial, sans-serif;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+
+.shopping::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Centre the items on wide screens, keep left-aligned scrolling on small ones */
+@media (min-width: 1000px) {
+  .shopping {
+    justify-content: center;
+  }
+}
+
+.shopping span,
+.shopping a {
+  flex: none;
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: var(--strip-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.shopping span:hover,
+.shopping a:hover {
+  background-color: var(--strip-pill);
+  color: var(--strip-text-hover);
+}
+
+/* Current page / selected category (works with NavLink's default "active" class) */
+.shopping a.active,
+.shopping span.active,
+.shopping [aria-current="page"] {
+  background-color: var(--strip-amber);
+  color: #2a1c00;
+  font-weight: 700;
+}
+
+.shopping a:focus-visible,
+.shopping span:focus-visible {
+  outline: 2px solid var(--strip-amber);
+  outline-offset: 2px;
+}
+
+/* Soft fade on the edges so people see the strip can scroll */
+@media (max-width: 999px) {
+  .shopping {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 24px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 24px), transparent 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shopping span,
+  .shopping a {
+    transition: none;
+  }
+}
