@@ -507,7 +507,7 @@ function Home() {
         <section id="hero">
           <div id="hero-copy">
             <h1 id="hero-title">
-              Festival savings on tech, home and gifting
+              Festival savings on tech
             </h1>
 
             <p id="hero-text">
