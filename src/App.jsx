@@ -1,24 +1,24 @@
-import SearchResults from './pages/SearchResults';
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
-import Home from './pages/Home';
-import Account from './pages/Account';
-import Orders from './pages/Order';
-import CartPage from './pages/CartPage';
-import AmazonPay from './pages/AmazonPay';
-import Mobile from './pages/Mobile';
-import TodaysDeals from './pages/TodaysDeals';
-import Coupons from './pages/coupons';
-import Flights from './pages/flights';
-import Electronics from "./pages/Electronics";
+import { Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
-import { CartProvider } from './context/CartContext';
-import './App.css';
+import Home from "./pages/Home";
+import SearchResults from "./pages/SearchResults";
+import Account from "./pages/Account";
+import Orders from "./pages/Order";
+import CartPage from "./pages/CartPage";
+import AmazonPay from "./pages/AmazonPay";
+import Mobile from "./pages/Mobile";
+import TodaysDeals from "./pages/TodaysDeals";
+import Coupons from "./pages/coupons";
+import Flights from "./pages/flights";
+import Electronics from "./pages/Electronics";
+import { CartProvider } from "./context/CartContext";
+import "./App.css";
 
 function App() {
   return (
     <CartProvider>
-
       <Navbar />
 
       <Routes>
@@ -32,12 +32,10 @@ function App() {
         <Route path="/Coupons" element={<Coupons />} />
         <Route path="/Flights" element={<Flights />} />
         <Route path="/Electronics" element={<Electronics />} />
-        <Route path="/Cartcontext" element={<Electronics />} />
-        <Route path="/search" element={<SearchResults/>} />
+        <Route path="/search" element={<SearchResults />} />
       </Routes>
 
       <Footer />
-
     </CartProvider>
   );
 }
