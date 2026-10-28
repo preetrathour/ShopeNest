@@ -268,10 +268,8 @@ function useCountdownToMidnight() {
   };
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 02eb5418c09707318108802ede4e678dd7dcd405
+
 function ProductCard({ product, onAddToCart }) {
   const [isAdded, setIsAdded] = useState(false);
 
@@ -438,10 +436,7 @@ function BannerSection({ id, title, subtitle, items }) {
   );
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 02eb5418c09707318108802ede4e678dd7dcd405
 function Home() {
   const { addToCart } = useCart();
 
