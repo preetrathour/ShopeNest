@@ -13,6 +13,7 @@ import Flights from './pages/flights';
 import Electronics from "./pages/Electronics";
 import Footer from "./components/Footer";
 import { CartProvider } from './context/CartContext';
+import ContactUs from './pages/ContactUs';
 import './App.css';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/Electronics" element={<Electronics />} />
         <Route path="/Cartcontext" element={<Electronics />} />
         <Route path="/search" element={<SearchResults/>} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
 
       <Footer />

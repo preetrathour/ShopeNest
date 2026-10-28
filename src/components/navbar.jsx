@@ -113,7 +113,10 @@ function Navbar({ cartCount = 0 }) {
             </span>
 
             <span>Cart</span>
+            <br></br>
+          
           </NavLink>
+          <Link to="/contact">Contact Us</Link>
         </nav>
       </div>
     </header>

@@ -96,7 +96,6 @@ function useCountdownToMidnight() {
   };
 }
 
-/* ---------- Components ---------- */
 
 function ProductCard({ product, onAddToCart }) {
   const [isAdded, setIsAdded] = useState(false);
@@ -219,7 +218,6 @@ function BannerSection({ id, title, subtitle, items }) {
   );
 }
 
-/* ---------- Page ---------- */
 
 function Home() {
   const { addToCart } = useCart();
@@ -251,7 +249,6 @@ function Home() {
       <Shoping />
 
       <div className="hm-container">
-        {/* Hero */}
         <section id="hero">
           <div id="hero-copy">
             <h1 id="hero-title">Festival savings on tech, home and gifting</h1>
@@ -275,7 +272,7 @@ function Home() {
             }}
           >
             <source
-              src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4"
+              src="https://www.pexels.com/download/video/7191512/"
               type="video/mp4"
             />
           </video>
