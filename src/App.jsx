@@ -16,6 +16,7 @@ import Electronics from "./pages/Electronics";
 import ContactUs from "./pages/ContactUs";
 import { CartProvider } from "./context/CartContext";
 import "./App.css";
+import AdminSection from "./pages/AdminSection";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
         <Route path="/Cartcontext" element={<Electronics />} />
         <Route path="/search" element={<SearchResults />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/Admin" element={<AdminSection />} />
+
       </Routes>
 
       <Footer />

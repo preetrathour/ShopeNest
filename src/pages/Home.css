@@ -117,8 +117,7 @@
   min-height: var(--hero-h);
   overflow: hidden;
   color: #fff;
- 
-  background: var(--navy, #131921);
+  backgound: var(--navy, #131921);
 }
 
 
